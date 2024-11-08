@@ -11,9 +11,17 @@ import Squidward from '../assets/squidward.png';
 import Peter from '../assets/peter.png';
 import Stewie from '../assets/stewie.png';
 import Brian from '../assets/brian.webp';
+import hoverSound from '../assets/beam_sound.mp3';
 import './frenzy.css';
 
 function Fandom() {
+  const soundEffect = new Audio(hoverSound);
+  const playSound = () => {
+    soundEffect.currentTime = 0;
+    soundEffect.play();
+  };
+
+
   const shows = [
     {
       title: "Rick And Morty",
@@ -110,32 +118,32 @@ function Fandom() {
           key={showIndex}
           className="show-container bg-gray-800 bg-opacity-70 rounded-lg shadow-lg p-12 w-4/5"
         >
-          {/* Show Title */}
+
           <h1 className="text-4xl font-bold text-white mb-12 text-center">
             {show.title}
           </h1>
 
-          {/* Character Cards */}
-          <div className="flex flex-wrap justify-center gap-12">
-            {show.characters.map((character, charIndex) => (
-            <div
-                key={charIndex}
-                className="character-card bg-gray-900 rounded-lg shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-[0_0_20px_10px] hover:shadow-purple-500"
-            >
-                <img
-                src={character.image}
-                alt={character.name}
-                className="w-48 h-48 object-cover object-center mx-auto rounded-full"
-                />
-                <div className="p-4 text-center">
-                <h3 className="text-xl font-semibold text-white">
-                    {character.name}
-                </h3>
-                <p className="text-gray-300">{character.description}</p>
-                </div>
+        <div className="flex flex-wrap justify-center gap-12">
+        {show.characters.map((character, charIndex) => (
+          <div
+            key={charIndex}
+            onMouseEnter={playSound}
+            className="character-card bg-gray-900 rounded-lg shadow-md p-4 transform transition duration-300 hover:scale-105 hover:shadow-[0_0_20px_10px] hover:shadow-purple-500"
+          >
+            <img
+              src={character.image}
+              alt={character.name}
+              className="character-image w-full h-full object-cover mx-auto rounded-full"
+            />
+            <div className="p-4 text-center">
+              <h3 className="text-xl font-semibold text-white">
+                {character.name}
+              </h3>
+              <p className="text-gray-300">{character.description}</p>
             </div>
-            ))}
-            </div>
+          </div>
+  ))}
+</div>
 
         </div>
       ))}
