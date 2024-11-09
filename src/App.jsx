@@ -10,7 +10,8 @@ import Footer from './components/Footer';
 import Fandom from './pages/Fandom';
 import DeepShowerThoughts from './pages/DeepShowerThoughts';
 import './components/Header.css';
-import './components/General.css'
+import './components/General.css';
+import Phobia from './pages/Phobia';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/fandom" element={<Fandom />} />
           <Route path="/FunFacts" element={<FunFacts />} />
           <Route path="/DeepShowerThoughts" element={<DeepShowerThoughts />} />
+          <Route path="/Phobia" element={<Phobia />} />
         </Routes>
       </main>
       <Footer />

@@ -24,8 +24,8 @@ function Header() {
         <Link to="/DeepShowerThoughts" className="nav-button" onClick={playSound}>Deep Shower Thoughts</Link>
         <Link to="/FunFacts" className="nav-button" onClick={playSound}>Weird History</Link>
         <Link to="/MemeGenerator" className="nav-button" onClick={playSound}>Meme Machine</Link>
-        <Link to="/phobias" className="nav-button" onClick={playSound}>Phobias & Fears</Link>
-        <Link to="/about-us" className="nav-button" onClick={playSound}>About Us</Link>
+        <Link to="/Phobia" className="nav-button" onClick={playSound}>Phobias & Fears</Link>
+        <Link to="/About" className="nav-button" onClick={playSound}>About Us</Link>
       </nav>
 
 
